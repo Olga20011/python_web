@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  {% block content %}
+  {{ calendar }}
+  {% endblock %}
+  <h1> Calender </h1>
+
+  <style>
+    body{
+      background-color: whitesmoke;
+    }
+
+.calendar {
+  width: 80%;
+  margin: auto;
+  font-size: 13px;
+}
+h1{
+  font-size: 50px;
+  text-align: center;
+  color: #702A79;
+}
+
+.calendar tr, .calendar td {
+  border: 1px solid black;
+}
+
+.calendar th {
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.calendar td {
+  width: 80px;
+  height: 70px;
+  padding: 20px 0px 0px 5px;
+}
+
+.month {
+  font-size: 25px;
+}
+
+.date {
+  font-size: 16px;
+}
+
+ul {
+  height: 100%;
+  padding: 0px 5px 0px 20px;
+}
+
+a {
+  color: #17a2b8;
+  text-decoration: none;
+}
+  </style>
+
+  <div class="clearfix">
+  <a class="btn info" href="{% url 'CalenderView' %}?{{ prev_month }}">Previous Month</a>
+  <a class="btn info" href="{% url 'CalenderView' %}?{{ next_month }}">Next Month </a>
+ 
+</div>
+<a class="btn info" id="button" href="{% url 'register_calender' %}">Add event</a>
+<a class="btn info" id="button1" href="{% url 'home_view' %}">Home</a>
+
+
+
+   
+  <style>
+  
+.info {
+  border-color: #702A79;
+  color:#702A79;
+}
+.info:hover {
+  background:#702A79;
+  color: white;
+}
+.clearfix {
+  margin-left: 60px;
+ 
+}
+.btn{
+  background-color:#ffffff;
+  color:#702A79;
+  border-radius: 10px;
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #702A79;
+}
+a{
+    text-decoration: none;
+}
+#button{
+  margin-left: 80%;
+}
+#button1{
+ margin-left: 1%;
+}
+#button3{
+ margin-left: 1%;
+}
+  
+  </style>
+
+</body>
+</html>
