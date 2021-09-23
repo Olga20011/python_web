@@ -1,5 +1,5 @@
 from django.http import request
-from.models import Student
+from .models import Student
 from django.shortcuts import redirect, render
 from .forms import StudentRegistrationForms
 
