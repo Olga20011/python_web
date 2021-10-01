@@ -1,4 +1,4 @@
-import django_heroku
+
 """
 Django settings for school_system project.
 
@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
-
+import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -84,12 +84,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mydb',
-        'USER': 'myuser',
-        'PASSWORD': 'mypass',
-        'HOST': 'localhost',
-        'PORT': '',
+        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # 'NAME': 'mydb',
+        # 'USER': 'myuser',
+        # 'PASSWORD': 'mypass',
+        # 'HOST': 'localhost',
+        # 'PORT': '5432',
     }
 }
 
@@ -131,10 +131,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIR=[
-    BASE_DIR/"static",
+    BASE_DIR/"static"
 ]
-MEDIA_URL="/images/"
+MEDIA_URL= '/images/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'static/images/')
+
+
 
 
 # Default primary key field type

@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 
 
 # Create your models here.
@@ -28,7 +29,7 @@ class Student (models.Model):
     # student_roll_number=models.CharField(max_length=10,null=True)
     date_of_enrollment=models.DateField(null=True)
     # laptop_serial_number=models.CharField(max_length=5,blank=True,null=True)
-    medical_report=models.FileField(upload_to="docs/",null=True)
+    medical_report=models.FileField(upload_to="docs/",default='SOME STRING')
     email_address=models.EmailField(max_length=50, null=True)
     profile=models.ImageField(upload_to="images/",null=True)
     national_id=models.CharField(max_length=12,null=True)
@@ -44,6 +45,10 @@ class Student (models.Model):
     
     def full_name(self):
         return f"{self.first_name} {self.last_name}"
+
+    def year_of_birth(self):
+        current_year=datetime.datetime.now().year
+        return current_year-self.age
     
 
 
