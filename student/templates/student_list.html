@@ -29,9 +29,9 @@
         </tr>
         {% for student in students%}
     <tr>
-        {% if student.profile %}
+       
         <td><img src="{{student.profile.url}}"></td>
-        {% endif %}
+       
         <td>{{student.first_name }}</td>
         <td>{{ student.last_name }}</td>
         <td>{{ student.age }}</td>

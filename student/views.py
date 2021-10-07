@@ -1,3 +1,4 @@
+from django.db.models.fields import CommaSeparatedIntegerField
 from django.http import request
 from .models import Student
 from django.shortcuts import redirect, render
@@ -6,9 +7,9 @@ from .forms import StudentRegistrationForms
 
 def register_student(request):
     if request.method=="POST":
-        form=StudentRegistrationForms(request.POST,request.FILES)
+        form=StudentRegistrationForms(request.POST or None,request.FILES)
         if form.is_valid():
-            form.save()
+            form.save(commit=False)
         else:
             print(form.errors)
     else:

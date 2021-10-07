@@ -53,6 +53,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -82,14 +83,14 @@ WSGI_APPLICATION = 'school_system.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        # 'NAME': 'mydb',
-        # 'USER': 'myuser',
-        # 'PASSWORD': 'mypass',
-        # 'HOST': 'localhost',
-        # 'PORT': '5432',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mydb',
+        'USER': 'myuser',
+        'PASSWORD': 'mypass',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -129,12 +130,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
-STATICFILES_DIR=[
-    BASE_DIR/"static"
-]
-MEDIA_URL= '/images/'
-MEDIA_ROOT=os.path.join(BASE_DIR,'static/images/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 
 
