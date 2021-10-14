@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav" >
+        <a href=" {% url 'student_list' %}">Student</a>
+        <a href=" {% url 'trainer_list' %}">Trainer</a>
+        <a href=" {% url 'courses_list' %}">Courses</a>
+        <a href=" {% url 'CalenderView' %}">Calender</a>
+      </div>
+
+      <style>
+          .nav{
+            position: sticky;
+            width: 100%;
+           
+        }
+        .nav a{ 
+
+            margin-left: 13%;
+            font-size: 25px;
+            color: #702A79;
+            text-decoration: none;
+            margin-top: 3%;
+        }
+      </style>
+
+    
+
+</body>
+</html>

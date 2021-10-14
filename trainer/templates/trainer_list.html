@@ -7,13 +7,16 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Trainer list table</h1>
+    {% include 'navbar.html'%}
+
 
     <div id="clerfix" >
         <a class="btn info" id="button2" href="{% url 'register_trainer' %}">Register trainer</a>
         <a class="btn info" id="button" href="{% url 'home_view' %}">Home</a>
     </div>
 
-    <h1>Trainer list table</h1>
+
     <table id="trainers">
         <tr>
             <th>Profile</th>
@@ -107,7 +110,8 @@
   margin-bottom: -10%;
 }
 #clerfix{
-    margin-top: 3%;
+    margin-top: 1%;
+    padding: 2%;
 }
 a{
     text-decoration: none;
@@ -116,6 +120,20 @@ a{
 #button2{
   margin-left: 10%;
  
+}
+td a{
+    background-color:#ffffff;
+    color:#702A79;
+    border-radius: 10px;
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #702A79;
+    margin-bottom: -10%;
+}
+td a:hover{
+    background:#702A79;
+    color: white;
+
 }
     </style>
 </body>
